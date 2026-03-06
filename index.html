@@ -21,6 +21,8 @@ font-family:Arial;
 overflow:hidden;
 }
 
+/* profile card */
+
 .card{
 text-align:center;
 }
@@ -40,6 +42,21 @@ margin-top:20px;
 letter-spacing:3px;
 }
 
+/* music button */
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+padding:10px 18px;
+background:white;
+color:black;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
 /* hide youtube player */
 
 #ytmusic{
@@ -55,6 +72,8 @@ border:0;
 
 <body>
 
+<button class="music-btn" onclick="playMusic()">▶ MUSIC</button>
+
 <div class="card">
 
 <img src="https://files.catbox.moe/tsd9ie.gif">
@@ -64,9 +83,18 @@ border:0;
 </div>
 
 <iframe id="ytmusic"
-src="https://www.youtube.com/embed/DrlaVYKWeLU?autoplay=1&loop=1&playlist=DrlaVYKWeLU&controls=0"
+src="https://www.youtube.com/embed/DrlaVYKWeLU?enablejsapi=1&loop=1&playlist=DrlaVYKWeLU&controls=0"
 allow="autoplay">
 </iframe>
+
+<script>
+
+function playMusic(){
+document.getElementById("ytmusic").src =
+"https://www.youtube.com/embed/DrlaVYKWeLU?autoplay=1&loop=1&playlist=DrlaVYKWeLU&controls=0";
+}
+
+</script>
 
 </body>
 </html>
