@@ -21,11 +21,11 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
 color:white;
+overflow:hidden;
 }
 
-/* Background video */
+/* background video */
 
 .video-bg{
 position:fixed;
@@ -52,18 +52,18 @@ pointer-events:none;
 .card{
 text-align:center;
 background:rgba(0,0,0,0.45);
-padding:35px;
-border-radius:18px;
+padding:30px;
+border-radius:20px;
 backdrop-filter:blur(10px);
 }
 
 .card img{
-width:160px;
-height:160px;
+width:170px;
+height:170px;
 border-radius:50%;
 border:4px solid white;
 object-fit:cover;
-box-shadow:0 0 35px rgba(255,255,255,0.6);
+box-shadow:0 0 30px rgba(255,255,255,0.6);
 }
 
 .card h1{
@@ -80,7 +80,7 @@ top:20px;
 right:20px;
 padding:10px 18px;
 border:none;
-border-radius:8px;
+border-radius:6px;
 background:white;
 color:black;
 font-weight:bold;
@@ -92,7 +92,7 @@ cursor:pointer;
 @media (max-width:600px){
 
 .card{
-padding:22px;
+padding:20px;
 }
 
 .card img{
@@ -104,12 +104,6 @@ height:130px;
 font-size:18px;
 }
 
-.music-btn{
-top:15px;
-right:15px;
-padding:8px 14px;
-}
-
 }
 
 </style>
@@ -118,7 +112,7 @@ padding:8px 14px;
 
 <body>
 
-<button class="music-btn" onclick="playMusic()">🎵 MUSIC</button>
+<button class="music-btn" onclick="toggleMusic()">🎵 MUSIC</button>
 
 <div class="card">
 
@@ -140,10 +134,25 @@ allow="autoplay">
 
 <script>
 
-function playMusic(){
+let playing=false;
 
-document.getElementById("player").src =
-"https://www.youtube.com/embed/ly1lWkRwm6g?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=ly1lWkRwm6g";
+function toggleMusic(){
+
+let p=document.getElementById("player");
+
+if(!playing){
+
+p.src="https://www.youtube.com/embed/ly1lWkRwm6g?autoplay=1&controls=0&rel=0&loop=1&playlist=ly1lWkRwm6g";
+
+playing=true;
+
+}else{
+
+p.src="https://www.youtube.com/embed/ly1lWkRwm6g?controls=0&loop=1&playlist=ly1lWkRwm6g&mute=1";
+
+playing=false;
+
+}
 
 }
 
