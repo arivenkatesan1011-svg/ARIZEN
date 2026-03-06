@@ -27,24 +27,14 @@ overflow:hidden;
 
 /* background video */
 
-.video-bg{
+.video-bg video{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
+object-fit:cover;
 z-index:-1;
-overflow:hidden;
-}
-
-.video-bg iframe{
-position:absolute;
-top:50%;
-left:50%;
-width:177.77vh;
-height:100vh;
-transform:translate(-50%,-50%);
-pointer-events:none;
 }
 
 /* profile card */
@@ -69,7 +59,6 @@ box-shadow:0 0 30px rgba(255,255,255,0.6);
 .card h1{
 margin-top:18px;
 letter-spacing:4px;
-font-size:22px;
 }
 
 /* music button */
@@ -85,25 +74,6 @@ background:white;
 color:black;
 font-weight:bold;
 cursor:pointer;
-}
-
-/* mobile */
-
-@media (max-width:600px){
-
-.card{
-padding:20px;
-}
-
-.card img{
-width:130px;
-height:130px;
-}
-
-.card h1{
-font-size:18px;
-}
-
 }
 
 </style>
@@ -124,34 +94,29 @@ font-size:18px;
 
 <div class="video-bg">
 
-<iframe id="player"
-src="https://www.youtube.com/embed/ly1lWkRwm6g?controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=ly1lWkRwm6g&mute=1"
-frameborder="0"
-allow="autoplay">
-</iframe>
+<video autoplay muted loop>
+<source src="background.mp4" type="video/mp4">
+</video>
 
 </div>
+
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 
 let playing=false;
+let music=document.getElementById("music");
 
 function toggleMusic(){
 
-let p=document.getElementById("player");
-
 if(!playing){
-
-p.src="https://www.youtube.com/embed/ly1lWkRwm6g?autoplay=1&controls=0&rel=0&loop=1&playlist=ly1lWkRwm6g";
-
+music.play();
 playing=true;
-
 }else{
-
-p.src="https://www.youtube.com/embed/ly1lWkRwm6g?controls=0&loop=1&playlist=ly1lWkRwm6g&mute=1";
-
+music.pause();
 playing=false;
-
 }
 
 }
