@@ -1,14 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Profile</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Photo</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    background:#000;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial;
+}
+
+.container{
+    text-align:center;
+}
+
+img{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #fff;
+    box-shadow:0 0 25px rgba(255,255,255,0.5);
+}
+
+h1{
+    color:white;
+    margin-top:20px;
+    letter-spacing:3px;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>MY PROFILE</h1>
-<p>SUPPORT ALL TYPES OF FREE FIRE (INCLUDING BETA)</p>
+<div class="container">
+
+<img src="myphoto.jpg" alt="My Photo">
+
+<h1>WELCOME</h1>
+
+</div>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>
